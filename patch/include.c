@@ -13,7 +13,6 @@
 
 /* Other patches */
 #include "attachx.c"
-#include "decorationhints.c"
 #include "focusfollowmouse.c"
 #include "pertag.c"
 #include "sizehints_ruled.c"
