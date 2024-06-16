@@ -200,23 +200,34 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *thunar[]  = { "thunar", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
 	{ MODKEY,                       XK_d,          spawn,                  {.v = dmenucmd } },
+	{ MODKEY,                       XK_e,          spawn,                  {.v = thunar } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 
-	{ MODKEY,                       XK_k,          focusstack,             {.i = +1 } },
-	{ MODKEY,                       XK_j,          focusstack,             {.i = -1 } },
+	{ MODKEY,                       XK_j,          focusstack,             {.i = +1 } },
+	{ MODKEY,                       XK_k,          focusstack,             {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,          movestack,              {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,          movestack,              {.i = -1 } },
+	{ MODKEY,                       XK_Right,      focusstack,             {.i = +1 } },
+	{ MODKEY,                       XK_Left,       focusstack,             {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_Right,      movestack,              {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_Left,       movestack,              {.i = -1 } },
 	{ MODKEY,                       XK_h,          setmfact,               {.f = -0.05} },
 	{ MODKEY,                       XK_l,          setmfact,               {.f = +0.05} },
+	{ MODKEY,                       XK_Up,         setmfact,               {.f = -0.05} },
+	{ MODKEY,                       XK_Down,       setmfact,               {.f = +0.05} },
+	{ MODKEY,                       XK_m,          zoom,                   {0} },
+	{ MODKEY|ShiftMask,             XK_Up,         zoom,                   {0} },
 
 	{ MODKEY,                       XK_comma,      focusmon,               {.i = -1 } },
 	{ MODKEY,                       XK_period,     focusmon,               {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,      tagmon,                 {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,     tagmon,                 {.i = +1 } },
 
-	{ MODKEY,                       XK_m,          zoom,                   {0} },
 	{ MODKEY,                       XK_Tab,        view,                   {0} },
 	{ MODKEY,                       XK_s,          togglefloating,         {0} },
 	{ MODKEY,                       XK_w,          setlayout,              {0} },

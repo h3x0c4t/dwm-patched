@@ -14,6 +14,7 @@
 /* Other patches */
 #include "attachx.c"
 #include "focusfollowmouse.c"
+#include "movestack.c"
 #include "pertag.c"
 #include "sizehints_ruled.c"
 #include "swallow.c"
